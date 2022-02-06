@@ -3,14 +3,17 @@ import RealmSwift
 
 class CurrencyViewModel {
     
-    
+    var persistedRateList: Results<Currency>?
+    var persistRate: CurrencyDictionary?
+    var currency = Currency()
+    var currencyObject: [CurrencyDictionary]?
     var timeStamp = 0
     var date = ""
     var loadCurrencyDropDown: [String] = []
-   
+    let persistRealm = RealmPersistenceStore()
     var base: [String] = [String]()
     var urlString: String?
-   
+    var apiClass: ApiCall?
     var readDataSaved : ((Bool) -> Void)?
     var rateArray = [Double]()
     var getConversionRate: (([Double]) -> Void)?
