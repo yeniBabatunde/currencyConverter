@@ -19,6 +19,7 @@
 		B46704BF27B0904C00369481 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B46704BE27B0904C00369481 /* RealmSwift */; };
 		B46704C227B090EA00369481 /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C127B090EA00369481 /* PersistenceStore.swift */; };
 		B46704C427B0910100369481 /* RealmModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C327B0910100369481 /* RealmModelObjects.swift */; };
+		B46704C727B0954A00369481 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C627B0954A00369481 /* Extension+ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B46704B827B08F2E00369481 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		B46704C127B090EA00369481 /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		B46704C327B0910100369481 /* RealmModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModelObjects.swift; sourceTree = "<group>"; };
+		B46704C627B0954A00369481 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 		C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.debug.xcconfig"; sourceTree = "<group>"; };
 		E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				B46704B727B08E7900369481 /* Controller */,
+				B46704C627B0954A00369481 /* Extension+ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,7 +160,6 @@
 				C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */,
 				E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,7 +214,7 @@
 			);
 			mainGroup = B467049127B08CCC00369481;
 			packageReferences = (
-				B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = B467049B27B08CCC00369481 /* Products */;
 			projectDirPath = "";
@@ -283,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46704C727B0954A00369481 /* Extension+ViewController.swift in Sources */,
 				B46704C427B0910100369481 /* RealmModelObjects.swift in Sources */,
 				B467049E27B08CCC00369481 /* AppDelegate.swift in Sources */,
 				B46704B927B08F2E00369481 /* CurrencyViewModel.swift in Sources */,
@@ -512,7 +515,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -525,12 +528,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		B46704BC27B0904C00369481 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		B46704BE27B0904C00369481 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
