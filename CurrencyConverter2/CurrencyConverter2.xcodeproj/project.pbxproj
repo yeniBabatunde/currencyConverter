@@ -20,6 +20,7 @@
 		B46704C227B090EA00369481 /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C127B090EA00369481 /* PersistenceStore.swift */; };
 		B46704C427B0910100369481 /* RealmModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C327B0910100369481 /* RealmModelObjects.swift */; };
 		B46704C727B0954A00369481 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C627B0954A00369481 /* Extension+ViewController.swift */; };
+		B46704C927B0965600369481 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704C827B0965600369481 /* Structs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B46704C127B090EA00369481 /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		B46704C327B0910100369481 /* RealmModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModelObjects.swift; sourceTree = "<group>"; };
 		B46704C627B0954A00369481 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
+		B46704C827B0965600369481 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.debug.xcconfig"; sourceTree = "<group>"; };
 		E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 		B46704B227B08CEA00369481 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B46704C827B0965600369481 /* Structs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46704C927B0965600369481 /* Structs.swift in Sources */,
 				B46704C727B0954A00369481 /* Extension+ViewController.swift in Sources */,
 				B46704C427B0910100369481 /* RealmModelObjects.swift in Sources */,
 				B467049E27B08CCC00369481 /* AppDelegate.swift in Sources */,
