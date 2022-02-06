@@ -1,8 +1,11 @@
-//
-//  RealmModelObjects.swift
-//  CurrencyConverter2
-//
-//  Created by Decagon on 07/02/2022.
-//
-
 import Foundation
+import RealmSwift
+
+class Currency: Object {
+     dynamic var currency = List<CurrencyDictionary>()
+}
+
+class CurrencyDictionary: Object {
+    @objc dynamic var currency: String = ""
+    @objc dynamic var rate: Double = 0.0
+}
