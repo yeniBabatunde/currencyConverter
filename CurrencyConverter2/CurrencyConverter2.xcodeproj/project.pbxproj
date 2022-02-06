@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBC58B501E1F9093C64478A /* Pods_CurrencyConverter2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C3F9256963FA58633697D /* Pods_CurrencyConverter2.framework */; };
 		B467049E27B08CCC00369481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467049D27B08CCC00369481 /* AppDelegate.swift */; };
 		B46704A027B08CCC00369481 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467049F27B08CCC00369481 /* SceneDelegate.swift */; };
 		B46704A527B08CCC00369481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B46704A327B08CCC00369481 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		664C3F9256963FA58633697D /* Pods_CurrencyConverter2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConverter2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B467049A27B08CCC00369481 /* CurrencyConverter2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B467049D27B08CCC00369481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B467049F27B08CCC00369481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		B46704B827B08F2E00369481 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		B46704C127B090EA00369481 /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		B46704C327B0910100369481 /* RealmModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModelObjects.swift; sourceTree = "<group>"; };
+		C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.debug.xcconfig"; sourceTree = "<group>"; };
+		E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter2.release.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			files = (
 				B46704BF27B0904C00369481 /* RealmSwift in Frameworks */,
 				B46704BD27B0904C00369481 /* Realm in Frameworks */,
+				0FBC58B501E1F9093C64478A /* Pods_CurrencyConverter2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB7A3A6B4B85DDDA413258D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				664C3F9256963FA58633697D /* Pods_CurrencyConverter2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B467049127B08CCC00369481 = {
 			isa = PBXGroup;
 			children = (
 				B467049C27B08CCC00369481 /* CurrencyConverter2 */,
 				B467049B27B08CCC00369481 /* Products */,
+				D4F282934591893D0CE1FE5D /* Pods */,
+				AB7A3A6B4B85DDDA413258D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +151,16 @@
 			path = RealmUtilities;
 			sourceTree = "<group>";
 		};
+		D4F282934591893D0CE1FE5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */,
+				E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B46704AE27B08CCF00369481 /* Build configuration list for PBXNativeTarget "CurrencyConverter2" */;
 			buildPhases = (
+				36925265FC81343950820B4F /* [CP] Check Pods Manifest.lock */,
 				B467049627B08CCC00369481 /* Sources */,
 				B467049727B08CCC00369481 /* Frameworks */,
 				B467049827B08CCC00369481 /* Resources */,
+				80812A0E3AE7034A92A14CCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,7 +212,7 @@
 			);
 			mainGroup = B467049127B08CCC00369481;
 			packageReferences = (
-				B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
 			);
 			productRefGroup = B467049B27B08CCC00369481 /* Products */;
 			projectDirPath = "";
@@ -208,6 +235,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36925265FC81343950820B4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyConverter2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80812A0E3AE7034A92A14CCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter2/Pods-CurrencyConverter2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B467049627B08CCC00369481 /* Sources */ = {
@@ -363,6 +432,7 @@
 		};
 		B46704AF27B08CCF00369481 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C084FE940E00A7F4F48C1728 /* Pods-CurrencyConverter2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,6 +461,7 @@
 		};
 		B46704B027B08CCF00369481 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1BE0774A8CB941786069C43 /* Pods-CurrencyConverter2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,7 +512,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -454,12 +525,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		B46704BC27B0904C00369481 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = Realm;
 		};
 		B46704BE27B0904C00369481 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = B46704BB27B0904C00369481 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
