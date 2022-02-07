@@ -1,8 +1,8 @@
 import Foundation
 import RealmSwift
 
-class CurrencyViewModel {
-    
+final class CurrencyViewModel {
+
     var persistedRateList: Results<Currency>?
     var persistRate: CurrencyDictionary?
     var currency = Currency()
@@ -19,7 +19,7 @@ class CurrencyViewModel {
     var getConversionRate: (([Double]) -> Void)?
     var getDate: ((Int) -> Void)?
     
-    init(apiString: String){
+    init(apiString: String) {
         self.urlString = apiString
         apiClass = ApiCall(urlLink: urlString ?? "maximum number of calls have been made please change Apikey")
     }
@@ -39,7 +39,6 @@ class CurrencyViewModel {
                 getDate?(timeStamp)
                 getConversionRate?(rateArray)
             }
-            
             persistRealm.delete()
             persistRealm.saveData(of: currency)
             readDataSaved?(true)

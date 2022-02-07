@@ -4,8 +4,7 @@ import DropDown
 import Charts
 
 class ViewController: UIViewController, ChartViewDelegate {
-//    var chartData = LineChartData(dataSets: [])
-  
+
     var dataEntry = ChartDataEntry()
     override func viewDidLoad() {
         super.viewDidLoad()

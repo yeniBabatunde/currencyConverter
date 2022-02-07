@@ -52,7 +52,6 @@ extension ViewController {
         }
     }
     
-    
     func configureChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
@@ -74,6 +73,7 @@ extension ViewController {
         let chartData = LineChartData(dataSets: [chartDataSet])
         lineChartView.data = chartData
     }
+    
     func configureLineChartView() {
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
         lineChartView.xAxis.labelPosition = .bottom

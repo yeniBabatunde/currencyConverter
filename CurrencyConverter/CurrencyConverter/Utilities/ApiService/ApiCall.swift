@@ -2,7 +2,7 @@ import UIKit
 import Alamofire
 import RealmSwift
 
-class ApiCall{
+final class ApiCall {
     
     let realm = try! Realm()
     fileprivate var urlLink: String
