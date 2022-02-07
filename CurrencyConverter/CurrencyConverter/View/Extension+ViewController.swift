@@ -109,7 +109,7 @@ extension ViewController {
         }
         
         viewModel.getDate = { [weak self] time in
-            self?.currentTime.text = "Mid-market exchange rate at \(time.toHour) UTC"
+            self?.currentTime.text = "Mid-market exchange rate at \(time.toHour)  UTC"
         }
     }
     

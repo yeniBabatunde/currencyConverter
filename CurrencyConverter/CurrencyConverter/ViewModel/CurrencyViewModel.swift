@@ -29,7 +29,6 @@ final class CurrencyViewModel {
             self.base.append(result.base)
             self.date = result.date
             self.timeStamp = result.timestamp
-            
             for (key, value) in result.rates{
                 persistRate = CurrencyDictionary()
                 persistRate?.currency = key

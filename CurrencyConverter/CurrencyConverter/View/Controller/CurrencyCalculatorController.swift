@@ -83,7 +83,7 @@ class ViewController: UIViewController, ChartViewDelegate {
     let months = ["01 Jan", "07 Jun", "15 Jun", "23 Jun", "30 Jun"]
     let unitsSold = [7.0, 5.0, 7.0, 5.0, 9.0, 8.0, 9.0]
     var dataEntries: [ChartDataEntry] = []
-    let viewModel = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=e495167586ff929ca03db8c2c900ff94&format=1")
+    let viewModel = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=894c9fdb5b5b7f690ba6ed2bbaf4da54&format=1")
     lazy var firstCurrencyLogo = [String]()
     lazy var secondCurrencyLogo = [String]()
     let secondCurrencyDropDown = DropDown()

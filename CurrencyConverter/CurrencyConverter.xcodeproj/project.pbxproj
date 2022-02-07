@@ -15,11 +15,12 @@
 		B46470BF279E139A006C06B7 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46470BE279E139A006C06B7 /* CurrencyViewModel.swift */; };
 		B46470C1279E14F3006C06B7 /* RealmModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46470C0279E14F3006C06B7 /* RealmModelObjects.swift */; };
 		B46470C3279E16B7006C06B7 /* RealmPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46470C2279E16B7006C06B7 /* RealmPersistenceStore.swift */; };
+		B46704D227B1C0BF00369481 /* TimeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46704D127B1C0BF00369481 /* TimeConversion.swift */; };
 		B499BF9427B047670004D5BB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B499BF9327B047670004D5BB /* Realm */; };
 		B499BF9627B047670004D5BB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B499BF9527B047670004D5BB /* RealmSwift */; };
 		B4EAB4032792FC0A00B3FD73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4022792FC0A00B3FD73 /* AppDelegate.swift */; };
 		B4EAB4052792FC0A00B3FD73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4042792FC0A00B3FD73 /* SceneDelegate.swift */; };
-		B4EAB4072792FC0A00B3FD73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4062792FC0A00B3FD73 /* ViewController.swift */; };
+		B4EAB4072792FC0A00B3FD73 /* CurrencyCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4062792FC0A00B3FD73 /* CurrencyCalculatorController.swift */; };
 		B4EAB40A2792FC0A00B3FD73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB4082792FC0A00B3FD73 /* Main.storyboard */; };
 		B4EAB40C2792FC0C00B3FD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB40B2792FC0C00B3FD73 /* Assets.xcassets */; };
 		B4EAB40F2792FC0C00B3FD73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB40D2792FC0C00B3FD73 /* LaunchScreen.storyboard */; };
@@ -35,10 +36,11 @@
 		B46470BE279E139A006C06B7 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		B46470C0279E14F3006C06B7 /* RealmModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModelObjects.swift; sourceTree = "<group>"; };
 		B46470C2279E16B7006C06B7 /* RealmPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistenceStore.swift; sourceTree = "<group>"; };
+		B46704D127B1C0BF00369481 /* TimeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversion.swift; sourceTree = "<group>"; };
 		B4EAB3FF2792FC0A00B3FD73 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4EAB4022792FC0A00B3FD73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4EAB4042792FC0A00B3FD73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B4EAB4062792FC0A00B3FD73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4EAB4062792FC0A00B3FD73 /* CurrencyCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCalculatorController.swift; sourceTree = "<group>"; };
 		B4EAB4092792FC0A00B3FD73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4EAB40B2792FC0C00B3FD73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4EAB40E2792FC0C00B3FD73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B499BF9727B087EC0004D5BB /* RealmUtilities */,
 				B46470B2279CE1AB006C06B7 /* ApiService */,
 				B46470AD279C8C85006C06B7 /* ChartIndicator */,
+				B46704D127B1C0BF00369481 /* TimeConversion.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -90,7 +93,7 @@
 		B456011D2793392700B88547 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B4EAB4062792FC0A00B3FD73 /* ViewController.swift */,
+				B4EAB4062792FC0A00B3FD73 /* CurrencyCalculatorController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,7 +319,8 @@
 				B46470C1279E14F3006C06B7 /* RealmModelObjects.swift in Sources */,
 				B46470C3279E16B7006C06B7 /* RealmPersistenceStore.swift in Sources */,
 				B46470B4279CE1D5006C06B7 /* ApiCall.swift in Sources */,
-				B4EAB4072792FC0A00B3FD73 /* ViewController.swift in Sources */,
+				B4EAB4072792FC0A00B3FD73 /* CurrencyCalculatorController.swift in Sources */,
+				B46704D227B1C0BF00369481 /* TimeConversion.swift in Sources */,
 				B4EAB4032792FC0A00B3FD73 /* AppDelegate.swift in Sources */,
 				B46470AC279C84A9006C06B7 /* Extension+ViewController.swift in Sources */,
 				B4EAB4052792FC0A00B3FD73 /* SceneDelegate.swift in Sources */,
