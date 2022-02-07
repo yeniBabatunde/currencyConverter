@@ -18,6 +18,24 @@ class LineChartDisplayIndicator: MarkerImage {
         lazy var xaxis = entry.x
         dayText = "\(yaxis) \n \(xaxis)"
     }
+    
+    override func draw(context: CGContext, point: CGPoint) {
+        let labelWidth = dayText.size(withAttributes: attrs).width + 20
+        let labelHeight = dayText.size(withAttributes: attrs).height + 5
+        var rectangle = CGRect(x: point.x, y: point.y, width: labelWidth, height: labelHeight)
+        rectangle.origin.x -= rectangle.width / 2.0
+        let spacing: CGFloat = 25
+        rectangle.origin.y -= rectangle.height + spacing
+        let clipPath = UIBezierPath(roundedRect: rectangle, cornerRadius: 6.0).cgPath
+        let color = CGColor(red: 0.004, green: 0.698, blue: 0.322, alpha: 1)
+        context.addPath(clipPath)
+        context.setFillColor(color)
+        context.setStrokeColor(color)
+        context.closePath()
+        context.drawPath(using: .fillStroke)
+        dayText.draw(with: rectangle, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
+    }
+    
     private (set) var color: UIColor
     private (set) var font: UIFont
     private (set) var textColor: UIColor
@@ -30,5 +48,5 @@ class LineChartDisplayIndicator: MarkerImage {
         formatter.unitsStyle = .short
         return formatter
     }()
-
+    
 }
