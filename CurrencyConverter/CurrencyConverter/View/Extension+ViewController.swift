@@ -94,6 +94,14 @@ extension ViewController {
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.legend.enabled = false
         lineChartView.animate(xAxisDuration: 1.5)
+//       lineChartView.setVisibleXRangeMaximum(10)
+//        lineChartView.setVisibleXRangeMaximum(10.0)
+//        lineChartView.invalidate()
+//        lineChariew.setVisibleXRangeMaximum(3)
+//        lineChartView.setVisibleYRangeMaximum(3, axis: YAxis.AxisDependency.left
+//            )
+    
+                lineChartView.isUserInteractionEnabled = true
     }
     func getConversionDate() {
         viewModel.getConversionRate = { [weak self] ratesArray in

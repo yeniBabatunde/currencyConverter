@@ -5,7 +5,6 @@ import Charts
 
 class ViewController: UIViewController, ChartViewDelegate {
 
-    var dataEntry = ChartDataEntry()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -78,11 +77,11 @@ class ViewController: UIViewController, ChartViewDelegate {
         self.view.endEditing(true)
     }
     
-    let searchController = UISearchController()
+    var dataEntry = ChartDataEntry()
     var currencyRates = [Double]()
     var rateAtIndex = 0.0
     let months = ["01 Jan", "07 Jun", "15 Jun", "23 Jun", "30 Jun"]
-    let unitsSold = [50.0, 25.0, 50.0, 75.0, 100.0, 75.0]
+    let unitsSold = [7.0, 5.0, 7.0, 5.0, 9.0, 8.0, 9.0]
     var dataEntries: [ChartDataEntry] = []
     let viewModel = CurrencyViewModel(apiString: "http://data.fixer.io/api/latest?access_key=e495167586ff929ca03db8c2c900ff94&format=1")
     lazy var firstCurrencyLogo = [String]()
