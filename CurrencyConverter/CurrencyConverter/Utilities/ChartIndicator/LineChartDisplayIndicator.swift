@@ -20,17 +20,12 @@ class LineChartDisplayIndicator: MarkerImage {
     }
     
     override func draw(context: CGContext, point: CGPoint) {
-        // custom padding around text
         let labelWidth = dayText.size(withAttributes: attrs).width + 20
-        // if you modify labelHeigh you will have to tweak baselineOffset in attrs
         let labelHeight = dayText.size(withAttributes: attrs).height + 5
-        // if you modify labelHeigh you will have to tweak baselineOffset in attrs
-        // place pill above the marker, centered along x
         var rectangle = CGRect(x: point.x, y: point.y, width: labelWidth, height: labelHeight)
         rectangle.origin.x -= rectangle.width / 2.0
         let spacing: CGFloat = 25
         rectangle.origin.y -= rectangle.height + spacing
-        // rounded rect
         let clipPath = UIBezierPath(roundedRect: rectangle, cornerRadius: 6.0).cgPath
         let color = CGColor(red: 0.004, green: 0.698, blue: 0.322, alpha: 1)
         context.addPath(clipPath)
@@ -38,7 +33,6 @@ class LineChartDisplayIndicator: MarkerImage {
         context.setStrokeColor(color)
         context.closePath()
         context.drawPath(using: .fillStroke)
-        // add the text
         dayText.draw(with: rectangle, options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
         }
 
