@@ -18,3 +18,17 @@ class LineChartDisplayIndicator: MarkerImage {
         lazy var xaxis = entry.x
         dayText = "\(yaxis) \n \(xaxis)"
     }
+    private (set) var color: UIColor
+    private (set) var font: UIFont
+    private (set) var textColor: UIColor
+    private var dayText: String = ""
+    private var attrs: [NSAttributedString.Key: AnyObject]!
+    
+    static let formatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .short
+        return formatter
+    }()
+
+}
