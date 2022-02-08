@@ -6,8 +6,8 @@ target 'CurrencyConverter' do
   use_frameworks!
 
   # Pods for CurrencyConverter
-pod 'DropDown'
 pod 'Charts'
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'DropDown'
 end

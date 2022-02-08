@@ -23,7 +23,7 @@
 		B4EAB4052792FC0A00B3FD73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4042792FC0A00B3FD73 /* SceneDelegate.swift */; };
 		B4EAB4072792FC0A00B3FD73 /* CurrencyCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EAB4062792FC0A00B3FD73 /* CurrencyCalculatorController.swift */; };
 		B4EAB40A2792FC0A00B3FD73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB4082792FC0A00B3FD73 /* Main.storyboard */; };
-		B4EAB40C2792FC0C00B3FD73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB40B2792FC0C00B3FD73 /* Assets.xcassets */; };
+		B4EAB40C2792FC0C00B3FD73 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB40B2792FC0C00B3FD73 /* Color.xcassets */; };
 		B4EAB40F2792FC0C00B3FD73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EAB40D2792FC0C00B3FD73 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		B4EAB4042792FC0A00B3FD73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B4EAB4062792FC0A00B3FD73 /* CurrencyCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCalculatorController.swift; sourceTree = "<group>"; };
 		B4EAB4092792FC0A00B3FD73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4EAB40B2792FC0C00B3FD73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4EAB40B2792FC0C00B3FD73 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		B4EAB40E2792FC0C00B3FD73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4EAB4102792FC0C00B3FD73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C10DAEF8C4002FF2C69BFA80 /* Pods-CurrencyConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +151,17 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		B46704D927B32DBA00369481 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4EAB4082792FC0A00B3FD73 /* Main.storyboard */,
+				B4EAB40B2792FC0C00B3FD73 /* Color.xcassets */,
+				B4EAB40D2792FC0C00B3FD73 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = ViewModel/Resources;
+			sourceTree = "<group>";
+		};
 		B499BF9727B087EC0004D5BB /* RealmUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,9 +197,7 @@
 				B456012B27933B4900B88547 /* Model */,
 				B456012A27933AF600B88547 /* View */,
 				B456012C27933B5E00B88547 /* ViewModel */,
-				B4EAB4082792FC0A00B3FD73 /* Main.storyboard */,
-				B4EAB40B2792FC0C00B3FD73 /* Assets.xcassets */,
-				B4EAB40D2792FC0C00B3FD73 /* LaunchScreen.storyboard */,
+				B46704D927B32DBA00369481 /* Resources */,
 				B4EAB4102792FC0C00B3FD73 /* Info.plist */,
 			);
 			path = CurrencyConverter;
@@ -262,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4EAB40F2792FC0C00B3FD73 /* LaunchScreen.storyboard in Resources */,
-				B4EAB40C2792FC0C00B3FD73 /* Assets.xcassets in Resources */,
+				B4EAB40C2792FC0C00B3FD73 /* Color.xcassets in Resources */,
 				B4EAB40A2792FC0A00B3FD73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
