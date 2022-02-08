@@ -4,15 +4,11 @@ import DropDown
 import Charts
 
 class ViewController: UIViewController, ChartViewDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureViews()
-        convertedCurrencyTextField.isUserInteractionEnabled = false
-        let dismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWhenTapped))
-        dismissKeyboard.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(dismissKeyboard)
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,9 +51,7 @@ class ViewController: UIViewController, ChartViewDelegate {
             let i = secondCurrencyLogo.firstIndex(of: a)
             rateAtIndex = currencyRates[i ?? 0]
         }
-
         convertedCurrencyTextField.text = "\(firstCurrencyValue * rateAtIndex)"
-        
     }
     
     @IBAction func past30DaysChartButton(_ sender: Any) {
@@ -83,7 +77,7 @@ class ViewController: UIViewController, ChartViewDelegate {
     @objc func dismissKeyboardWhenTapped() {
         self.view.endEditing(true)
     }
-   
+    let ashColor = UIColor(named: "ashColor")
     var dataEntry = ChartDataEntry()
     var currencyRates = [Double]()
     var rateAtIndex = 0.0

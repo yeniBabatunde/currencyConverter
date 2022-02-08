@@ -29,13 +29,14 @@ final class CurrencyViewModel {
             self.base.append(result.base)
             self.date = result.date
             self.timeStamp = result.timestamp
+            getDate?(timeStamp)
             for (key, value) in result.rates{
                 persistRate = CurrencyDictionary()
                 persistRate?.currency = key
                 persistRate?.rate = value
                 currency.currency.append(persistRate!)
                 rateArray.append(value)
-                getDate?(timeStamp)
+                
                 getConversionRate?(rateArray)
             }
             persistRealm.delete()
@@ -45,12 +46,12 @@ final class CurrencyViewModel {
     }
     
     func passRetreivedData(completionHandler: ( @escaping (Container) -> Void )) {
-        var a : Container?
+        var container : Container?
         readDataSaved = { dataAvailable in
             if dataAvailable {
                 self.fetchDataFromRealm()
-                a = Container(base: self.base, currency: self.loadCurrencyDropDown)
-                completionHandler(a!)
+                container = Container(base: self.base, currency: self.loadCurrencyDropDown)
+                completionHandler(container!)
             }
         }
     }

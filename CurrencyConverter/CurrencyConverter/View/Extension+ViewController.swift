@@ -18,12 +18,9 @@ extension ViewController {
         })
         getConversionRate()
         convertedCurrencyTextField.isUserInteractionEnabled = false
-        dismissKeyboard()
-    }
-    
-    func dismissKeyboard(){
         let dismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWhenTapped))
         dismissKeyboard.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(dismissKeyboard)
     }
     
     func configureLayoutViews() {
@@ -48,7 +45,6 @@ extension ViewController {
         }
     }
     
-    
     func configureSecondCurrencyDropDown(_ list:[String]) {
         secondDropDownView.layer.borderWidth = 0.5
         if UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") != nil {
@@ -68,7 +64,6 @@ extension ViewController {
             rateAtIndex = currencyRates[index]
             print("THE RATE AT INDEX: \(index) IS: \(rateAtIndex)")
         }
-        
     }
     
     func configureChart(dataPoints: [String], values: [Double]) {
@@ -77,12 +72,13 @@ extension ViewController {
             dataEntry = ChartDataEntry(x: Double(i), y: values[i], data: dataPoints[i] as AnyObject)
             dataEntries.append(dataEntry)
         }
+        
         let chartDataSet = LineChartDataSet(entries: dataEntries, label: nil)
         chartDataSet.circleRadius = 8
         chartDataSet.circleHoleRadius = 6
         chartDataSet.drawValuesEnabled = false
-        chartDataSet.setColor(UIColor(named: "greenShade") ?? .black)
-        chartDataSet.fill = Fill(color: UIColor(named: "ashColor") ?? .black)
+        chartDataSet.setColor(ashColor ?? .black)
+        chartDataSet.fill = Fill(color: ashColor ?? .black)
         chartDataSet.fillAlpha = 0.8
         chartDataSet.drawFilledEnabled = true
         chartDataSet.mode = .cubicBezier
@@ -102,8 +98,8 @@ extension ViewController {
         lineChartView.leftAxis.zeroLineDashLengths = [20]
         lineChartView.leftAxis.zeroLineDashPhase = 2.0
         lineChartView.xAxis.avoidFirstLastClippingEnabled = true
-        lineChartView.xAxis.labelTextColor = UIColor(named: "ashColor") ?? .black
-        lineChartView.leftAxis.labelTextColor = UIColor(named: "ashColor") ?? .black
+        lineChartView.xAxis.labelTextColor = ashColor ?? .black
+        lineChartView.leftAxis.labelTextColor = ashColor ?? .black
         lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: months)
         lineChartView.xAxis.setLabelCount(months.count, force: true)
         lineChartView.rightAxis.drawAxisLineEnabled = false
@@ -113,12 +109,6 @@ extension ViewController {
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.legend.enabled = false
         lineChartView.animate(xAxisDuration: 1.5)
-        //       lineChartView.setVisibleXRangeMaximum(10)
-        //        lineChartView.setVisibleXRangeMaximum(10.0)
-        //        lineChartView.invalidate()
-        //        lineChariew.setVisibleXRangeMaximum(3)
-        //        lineChartView.setVisibleYRangeMaximum(3, axis: YAxis.AxisDependency.left
-        //            )
         lineChartView.isUserInteractionEnabled = true
     }
     
@@ -126,6 +116,8 @@ extension ViewController {
         viewModel.getConversionRate = { [weak self] ratesArray in
             self?.currencyRates = ratesArray
         }
+    }
+    func getConversionDate() {
         viewModel.getDate = { [weak self] time in
             self?.currentTime.text = "Mid-market exchange rate at \(time.toHour) UTC"
         }
