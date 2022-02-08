@@ -16,7 +16,14 @@ extension ViewController {
                 configureSecondCurrencyDropDown(secondCurrencyLogo)
             }
         })
-        getConversionDate()
+        getConversionRate()
+        convertedCurrencyTextField.isUserInteractionEnabled = false
+        dismissKeyboard()
+    }
+    
+    func dismissKeyboard(){
+        let dismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWhenTapped))
+        dismissKeyboard.cancelsTouchesInView = false
     }
     
     func configureLayoutViews() {
@@ -28,34 +35,46 @@ extension ViewController {
     
     func configureCurrencyDropDown(_ list:[String]) {
         firstDropDownView.layer.borderWidth = 0.5
-        firstDropDownLabel.text = ""
+        if UserDefaults.standard.string(forKey: "saveFirstCurrencySelected") != nil {
+            firstDropDownLabel.text = UserDefaults.standard.string(forKey: "saveFirstCurrencySelected")
+        }
         firstCurrencyDropDown.anchorView = firstDropDownView
         firstCurrencyDropDown.dataSource = list
         firstCurrencyDropDown.direction = .bottom
         firstCurrencyDropDown.bottomOffset = CGPoint(x: 0, y: (firstCurrencyDropDown.anchorView?.plainView.bounds.height) ?? 0 )
-        firstCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in firstDropDownLabel.text = list[index]
+        firstCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            firstDropDownLabel.text = list[index]
+            UserDefaults.standard.set(list[index], forKey: "saveFirstCurrencySelected")
         }
     }
     
+    
     func configureSecondCurrencyDropDown(_ list:[String]) {
         secondDropDownView.layer.borderWidth = 0.5
-        secondDropDownLabel.text = ""
+        if UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") != nil {
+            let retreivedData =  UserDefaults.standard.string(forKey: "saveSecondCurrencySelected")
+            secondDropDownLabel.text = retreivedData
+            labelOfCurrencyDesired.text = retreivedData
+        }
         secondCurrencyDropDown.direction = .bottom
         secondCurrencyDropDown.anchorView = secondDropDownView
         secondCurrencyDropDown.dataSource = list
         secondCurrencyDropDown.bottomOffset = CGPoint(x: 0, y: (secondCurrencyDropDown.anchorView?.plainView.bounds.height) ?? 0)
-        secondCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in secondDropDownLabel.text = list[index]
+        secondCurrencyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            secondDropDownLabel.text = list[index]
+            UserDefaults.standard.set(list[index], forKey: "saveSecondCurrencySelected")
             labelOfCurrencyDesired.text = list[index]
             secondCurrencyDropDown.userActivity?.isEligibleForSearch = true
             rateAtIndex = currencyRates[index]
             print("THE RATE AT INDEX: \(index) IS: \(rateAtIndex)")
         }
+        
     }
     
     func configureChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
-             dataEntry = ChartDataEntry(x: Double(i), y: values[i], data: dataPoints[i] as AnyObject)
+            dataEntry = ChartDataEntry(x: Double(i), y: values[i], data: dataPoints[i] as AnyObject)
             dataEntries.append(dataEntry)
         }
         let chartDataSet = LineChartDataSet(entries: dataEntries, label: nil)
@@ -94,20 +113,19 @@ extension ViewController {
         lineChartView.doubleTapToZoomEnabled = false
         lineChartView.legend.enabled = false
         lineChartView.animate(xAxisDuration: 1.5)
-//       lineChartView.setVisibleXRangeMaximum(10)
-//        lineChartView.setVisibleXRangeMaximum(10.0)
-//        lineChartView.invalidate()
-//        lineChariew.setVisibleXRangeMaximum(3)
-//        lineChartView.setVisibleYRangeMaximum(3, axis: YAxis.AxisDependency.left
-//            )
-    
-                lineChartView.isUserInteractionEnabled = true
+        //       lineChartView.setVisibleXRangeMaximum(10)
+        //        lineChartView.setVisibleXRangeMaximum(10.0)
+        //        lineChartView.invalidate()
+        //        lineChariew.setVisibleXRangeMaximum(3)
+        //        lineChartView.setVisibleYRangeMaximum(3, axis: YAxis.AxisDependency.left
+        //            )
+        lineChartView.isUserInteractionEnabled = true
     }
-    func getConversionDate() {
+    
+    func getConversionRate() {
         viewModel.getConversionRate = { [weak self] ratesArray in
             self?.currencyRates = ratesArray
         }
-        
         viewModel.getDate = { [weak self] time in
             self?.currentTime.text = "Mid-market exchange rate at \(time.toHour) UTC"
         }

@@ -44,7 +44,7 @@ final class CurrencyViewModel {
         })
     }
     
-    func passRetreivedData(completionHandler: ( @escaping (Container) -> Void )){
+    func passRetreivedData(completionHandler: ( @escaping (Container) -> Void )) {
         var a : Container?
         readDataSaved = { dataAvailable in
             if dataAvailable {

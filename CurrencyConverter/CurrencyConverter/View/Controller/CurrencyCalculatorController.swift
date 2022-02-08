@@ -50,7 +50,14 @@ class ViewController: UIViewController, ChartViewDelegate {
         guard let firstCurrencyValue = Double(firstCurrencyText) else {
             return
         }
+        if  UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") != nil {
+            let a = UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") ?? ""
+            let i = secondCurrencyLogo.firstIndex(of: a)
+            rateAtIndex = currencyRates[i ?? 0]
+        }
+
         convertedCurrencyTextField.text = "\(firstCurrencyValue * rateAtIndex)"
+        
     }
     
     @IBAction func past30DaysChartButton(_ sender: Any) {
@@ -76,7 +83,7 @@ class ViewController: UIViewController, ChartViewDelegate {
     @objc func dismissKeyboardWhenTapped() {
         self.view.endEditing(true)
     }
-    
+   
     var dataEntry = ChartDataEntry()
     var currencyRates = [Double]()
     var rateAtIndex = 0.0
