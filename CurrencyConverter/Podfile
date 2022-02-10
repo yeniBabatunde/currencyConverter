@@ -10,4 +10,5 @@ pod 'Charts'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'DropDown'
+inhibit_all_warnings!
 end
