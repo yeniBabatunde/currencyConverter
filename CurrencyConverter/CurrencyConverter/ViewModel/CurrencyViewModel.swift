@@ -21,7 +21,7 @@ final class CurrencyViewModel {
     
     init(apiString: String) {
         self.urlString = apiString
-        apiClass = ApiCall(urlLink: urlString ?? "maximum number of calls have been made please change Apikey")
+        apiClass = ApiCall(urlLink: urlString ?? "")
     }
     
     func saveData(){
@@ -45,12 +45,12 @@ final class CurrencyViewModel {
         })
     }
     
-    func passRetreivedData(completionHandler: ( @escaping (Container) -> Void )) {
-        var container : Container?
+    func passRetreivedData(completionHandler: ( @escaping (BaseCurrencyContainer) -> Void )) {
+        var container : BaseCurrencyContainer?
         readDataSaved = { dataAvailable in
             if dataAvailable {
                 self.fetchDataFromRealm()
-                container = Container(base: self.base, currency: self.loadCurrencyDropDown)
+                container = BaseCurrencyContainer(base: self.base, currency: self.loadCurrencyDropDown)
                 completionHandler(container!)
             }
         }

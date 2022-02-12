@@ -46,7 +46,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         guard let firstCurrencyValue = Double(firstCurrencyText) else {
             return
         }
-        if  UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") != nil {
+        if UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") != nil {
             let a = UserDefaults.standard.string(forKey: "saveSecondCurrencySelected") ?? ""
             let i = secondCurrencyLogo.firstIndex(of: a)
             rateAtIndex = currencyRates[i ?? 0]

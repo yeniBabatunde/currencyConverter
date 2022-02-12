@@ -6,9 +6,9 @@ target 'CurrencyConverter' do
   use_frameworks!
 
   # Pods for CurrencyConverter
-pod 'Charts'
+pod 'Charts', :inhibit_warnings => true
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'DropDown'
+pod 'DropDown', :inhibit_warnings => true
 inhibit_all_warnings!
 end

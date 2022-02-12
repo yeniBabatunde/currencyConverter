@@ -7,7 +7,7 @@ struct CurrencyModel: Codable {
         let rates: [String: Double]
 }
 
-struct Container {
+struct BaseCurrencyContainer {
     var base: [String]?
     var currency: [String]?
 }
